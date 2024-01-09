@@ -19,6 +19,7 @@ app.get('/', (req, res) => {
     } else {
         imagePath = path.join(__dirname, 'assets', 'download.png');
     }
+    console.log(imagePath);
     
     res.sendFile(imagePath);
 });
