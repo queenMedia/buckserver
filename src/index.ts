@@ -6,6 +6,7 @@ const app = express();
 const port = process.env.PORT || 3030;
 
 app.use(useragent.express());
+app.use('/assets', express.static(path.join(__dirname, 'assets')));
 app.use(cors());
 app.get('/', (req, res) => {
     const userAgent = req.useragent;
