@@ -9,7 +9,7 @@ app.use(cors());
 app.get('/', (req, res) => {
     const userAgent = req.useragent;
     if (userAgent.isChrome) {
-        res.sendFile(__dirname + '/download.png');
+        res.sendFile(__dirname + '/assets/download.png');
     } else if (userAgent.isEdge || userAgent.isBot) {
         console.log("A bot enterd!!!!!!");
         res.sendFile(__dirname + '/assets/aloha.webp');
