@@ -1,6 +1,7 @@
 import express from "express";
 import useragent from "express-useragent";
 import cors from "cors";
+import path from 'path';
 const app = express();
 const port = process.env.PORT || 3030;
 
@@ -8,14 +9,18 @@ app.use(useragent.express());
 app.use(cors());
 app.get('/', (req, res) => {
     const userAgent = req.useragent;
+    let imagePath;
+    
     if (userAgent.isChrome) {
-        res.sendFile(__dirname + '/assets/download.png');
+        imagePath = path.join(__dirname, 'assets', 'download.png');
     } else if (userAgent.isEdge || userAgent.isBot) {
-        console.log("A bot enterd!!!!!!");
-        res.sendFile(__dirname + '/assets/aloha.webp');
+        console.log("A bot entered!!!!!!");
+        imagePath = path.join(__dirname, 'assets', 'aloha.webp');
     } else {
-        res.sendFile(__dirname + '/assets/download.png');
+        imagePath = path.join(__dirname, 'assets', 'download.png');
     }
+    
+    res.sendFile(imagePath);
 });
 
 app.listen(port, () => {
