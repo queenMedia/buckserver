@@ -12,9 +12,9 @@ app.get('/', (req, res) => {
         res.sendFile(__dirname + '/download.png');
     } else if (userAgent.isEdge || userAgent.isBot) {
         console.log("A bot enterd!!!!!!");
-        res.sendFile(__dirname + '/aloha.webp');
+        res.sendFile(__dirname + '/assets/aloha.webp');
     } else {
-        res.sendFile(__dirname + '/download.png');
+        res.sendFile(__dirname + '/assets/download.png');
     }
 });
 
