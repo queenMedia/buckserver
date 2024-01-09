@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc && mkdir -p build/assets && cp -R ./src/assets/ build/assets/",
     "test": "NODE_ENV=dev mocha --check-leaks -r tsconfig-paths/register -r ts-node/register \"test/**/*.spec.ts\"",
-    "start": "nodemon ./src/index.ts",
+    "start": "node build/index.js",
     "dev": "nodemon ./src/index.ts"
   },
   "author": "",
