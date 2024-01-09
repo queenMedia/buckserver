@@ -13,12 +13,12 @@ app.get('/', (req, res) => {
     let imagePath;
     
     if (userAgent.isChrome) {
-        imagePath = path.join(__dirname, 'assets', 'download.png');
+        imagePath = path.join(__dirname, 'assets/assets', 'download.png');
     } else if (userAgent.isEdge || userAgent.isBot) {
         console.log("A bot entered!!!!!!");
-        imagePath = path.join(__dirname, 'assets', 'aloha.webp');
+        imagePath = path.join(__dirname, 'assets/assets', 'aloha.webp');
     } else {
-        imagePath = path.join(__dirname, 'assets', 'download.png');
+        imagePath = path.join(__dirname, 'assets/assets', 'download.png');
     }
     console.log(imagePath);
     
