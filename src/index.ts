@@ -1,5 +1,5 @@
-const express = require('express');
-const useragent = require('express-useragent');
+import express from "express";
+import useragent from "express-useragent";
 const app = express();
 const port = 3000;
 
