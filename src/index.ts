@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
     
     if (userAgent.isChrome) {
         imagePath = path.join(__dirname, 'assets/assets', 'download.png');
-    } else if (userAgent.isEdge || userAgent.isBot) {
+    } else if (userAgent.isBot) {
         console.log("A bot entered!!!!!!");
         imagePath = path.join(__dirname, 'assets/assets', 'aloha.webp');
     } else {
