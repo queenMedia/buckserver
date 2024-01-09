@@ -2,7 +2,7 @@ import express from "express";
 import useragent from "express-useragent";
 import cors from "cors";
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3030;
 
 app.use(useragent.express());
 app.use(cors());
