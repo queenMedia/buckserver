@@ -15,7 +15,8 @@ app.get('/', (req, res) => {
         console.log("A bot entered!!!!!!", userAgent);
     }
     imagePath = path.join(__dirname, 'assets/assets', 'simpletangoal1.png');
-    console.log(imagePath, userAgent);
+    const { isBot, browser, geoIp } = userAgent
+    console.log(imagePath, { isBot, geoIp, browser });
     res.sendFile(imagePath);
 });
 
