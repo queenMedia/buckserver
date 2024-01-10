@@ -14,9 +14,9 @@ app.get('/', (req, res) => {
     if (userAgent.isBot) {
         console.log("A bot entered!!!!!!");
     }
-    imagePath = path.join(__dirname, 'assets/assets', 'simpletangoal.png');
+    imagePath = path.join(__dirname, 'assets/assets', 'simpletangoal1.png');
     console.log(imagePath);
-    res.sendFile(imagePath);
+    res.sendFile(imagePath);   
 });
 
 app.listen(port, () => {
