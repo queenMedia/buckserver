@@ -12,11 +12,11 @@ app.get('/', (req, res) => {
     const userAgent = req.useragent;
     let imagePath;
     if (userAgent.isBot) {
-        console.log("A bot entered!!!!!!");
+        console.log("A bot entered!!!!!!", userAgent);
     }
     imagePath = path.join(__dirname, 'assets/assets', 'simpletangoal1.png');
-    console.log(imagePath);
-    res.sendFile(imagePath);   
+    console.log(imagePath, userAgent);
+    res.sendFile(imagePath);
 });
 
 app.listen(port, () => {
