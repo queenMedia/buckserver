@@ -11,17 +11,11 @@ app.use(cors());
 app.get('/', (req, res) => {
     const userAgent = req.useragent;
     let imagePath;
-    
-    if (userAgent.isChrome) {
-        imagePath = path.join(__dirname, 'assets/assets', 'download.png');
-    } else if (userAgent.isBot) {
+    if (userAgent.isBot) {
         console.log("A bot entered!!!!!!");
-        imagePath = path.join(__dirname, 'assets/assets', 'aloha.webp');
-    } else {
-        imagePath = path.join(__dirname, 'assets/assets', 'download.png');
     }
+    imagePath = path.join(__dirname, 'assets/assets', 'download.png');
     console.log(imagePath);
-    
     res.sendFile(imagePath);
 });
 
